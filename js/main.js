@@ -12,18 +12,18 @@
 /******************************************************
  *                        CODE ON LOAD                *
  ******************************************************/
+//creare un bottone
 const gridEl = document.getElementById("grid");
-console.log(gridEl);
+// console.log(gridEl);
 
 const playButtonEl = document.getElementById("play-button");
+playButtonEl.addEventListener("click", function () {
+  const difficultySelectorEl = document.getElementById("difficulty-sel");
+  const difficultyChoise = parseInt(difficultySelectorEl.value);
+  console.log(difficultyChoise);
+  gridGenerator(gridEl, difficultyChoise);
+});
 
-const difficultyEasy = 100;
-const difficultyNormal = 81;
-const difficultyHard = 49;
-gridGenerator(gridEl, difficultyEasy);
-// TODO: creare un bottone
-
-// TODO: creare una funzione che generi la griglia di gioco (parametri {griglia, dimensionemax})
 // generare all' interno della griglia una seguenza di numeri da 1 a dimensione
 
 // aggiungere una funzione al click sulla griglia che colora lo sfondo della casella di azzurro
@@ -33,22 +33,24 @@ gridGenerator(gridEl, difficultyEasy);
  *                      FUNCTION                      *
  ******************************************************/
 
+// Creare una funzione che generi la griglia di gioco
+// dati i parametri {griglia, dimensione})
 /**
- * generatore di elementi della griglia
+ * Generatore di elementi della griglia
  * @param {string} grid dove inserire le card
  * @param {int} dimension quante card creare
  */
 function gridGenerator(grid, dimension) {
+  grid.innerHTML = "";
   for (let i = 0; i < dimension; i++) {
     const cardEl = document.createElement("div");
     cardEl.classList.add("grid-element");
     cardEl.innerHTML = i + 1;
-    gridEl.append(cardEl);
-
-    console.log(cardEl);
-
+    grid.append(cardEl);
+    // aggiungere una funzione al click sulla griglia che colora lo sfondo della casella di azzurro
     cardEl.addEventListener("click", function () {
       this.classList.toggle("active");
+      console.log(this.innerHTML);
     });
   }
 }
