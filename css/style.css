@@ -3,6 +3,18 @@
   /* color: black; */
   background-color: #189ab4;
 }
+.col-100 {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+}
+.col-81 {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+.col-49 {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+}
 /* HEADER */
 
 /* MAIN */
@@ -19,8 +31,6 @@ main {
 }
 .grid-element {
   border: 1px solid #fff;
-  width: 10%;
-  aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;

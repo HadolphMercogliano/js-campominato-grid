@@ -45,6 +45,8 @@ function gridGenerator(grid, dimension) {
   for (let i = 0; i < dimension; i++) {
     const cardEl = document.createElement("div");
     cardEl.classList.add("grid-element");
+    cardEl.classList.add(`col-${dimension}`);
+
     cardEl.innerHTML = i + 1;
     grid.append(cardEl);
     // aggiungere una funzione al click sulla griglia che colora lo sfondo della casella di azzurro
